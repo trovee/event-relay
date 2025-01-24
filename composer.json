@@ -22,7 +22,6 @@
     },
     "require-dev": {
         "pestphp/pest": "^2.23",
-        "orchestra/testbench": "^8.13",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan-deprecation-rules": "^1.1",
         "phpstan/phpstan-phpunit": "^1.3",
@@ -40,16 +39,15 @@
         }
     },
     "scripts": {
-        "reset": "rm -rf vendor composer.lock && composer install",
         "test": "./vendor/bin/pest",
         "static-analysis": "./vendor/bin/phpstan analyse"
     },
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true,
-            "sort-packages": true
-        }
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true

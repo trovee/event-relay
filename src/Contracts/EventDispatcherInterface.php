@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Trovee\EventRelay\Contracts;
 
 use Trovee\EventRelay\Contracts\EventInterface;
@@ -15,6 +17,8 @@ interface EventDispatcherInterface
      * @throws \InvalidArgumentException if provider not found
      */
     public function removeProvider(string $providerName): void;
+
+    public function hasProvider(string $providerName): bool;
 
     /**
      * @return array<string, ProviderInterface>

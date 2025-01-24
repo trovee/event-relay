@@ -1,14 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Trovee\EventRelay\Exceptions;
 
 use Trovee\EventRelay\Contracts\EventInterface;
 
+/**
+ * Exception thrown when event dispatching fails.
+ * Contains the event that caused the error.
+ */
 class DispatcherException extends \Exception
 {
     public function __construct(
         string $message,
-        private EventInterface $event,
+        private readonly EventInterface $event,
         ?\Throwable $previous = null
     ) {
         parent::__construct($message, 0, $previous);
