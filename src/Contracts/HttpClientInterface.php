@@ -5,13 +5,13 @@ namespace Trovee\EventRelay\Contracts;
 interface HttpClientInterface
 {
     /**
-     * HTTP request gönder
+     * Send HTTP request
      *
-     * @param string $method HTTP method (GET, POST, etc.)
-     * @param string $endpoint API endpoint
-     * @param array $options Request options (headers, query, json, etc.)
-     * @return array Response data
-     * @throws \KaracaTech\EventTracker\Exceptions\HttpException
+     * @param string $method
+     * @param string $endpoint
+     * @param array<string, mixed> $options
+     * @return array<string, mixed>
+     * @throws \Trovee\EventRelay\Exceptions\HttpException
      */
     public function request(string $method, string $endpoint, array $options = []): array;
 }
