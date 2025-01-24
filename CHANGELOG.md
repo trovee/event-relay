@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Core contracts for event handling system
+  - EventInterface for defining event structure
+  - ProviderInterface for provider implementations
+  - EventMapperInterface for data transformation
+  - HttpClientInterface for HTTP communications
 - Initial project setup
 - Basic repository structure
 - Composer configuration with PHP 8.2 requirement
