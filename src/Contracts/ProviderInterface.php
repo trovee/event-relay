@@ -4,6 +4,13 @@ namespace Trovee\EventRelay\Contracts;
 
 interface ProviderInterface
 {
-    public function send(string $eventName, array $data): bool;
     public function getName(): string;
+    
+    /**
+     * @throws \Trovee\EventRelay\Exceptions\ProviderException
+     * @throws \Trovee\EventRelay\Exceptions\ValidationException
+     */
+    public function send(EventInterface $event): bool;
+    
+    public function supports(EventInterface $event): bool;
 }

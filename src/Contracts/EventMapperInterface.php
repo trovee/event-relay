@@ -4,6 +4,9 @@ namespace Trovee\EventRelay\Contracts;
 
 interface EventMapperInterface
 {
-    public function mapEventName(string $eventName): string;
+    public function map(EventInterface $event): array;
+    
+    public function getEventName(EventInterface $event): string;
+    
     public function mapEventData(string $eventName, array $data): array;
 }
