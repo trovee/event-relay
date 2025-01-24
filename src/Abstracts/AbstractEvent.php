@@ -1,15 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Trovee\EventRelay\Abstracts;
 
 use Trovee\EventRelay\Contracts\EventInterface;
 
-abstract class AbstractEvent implements EventInterface
+/**
+ * Base class for all events in the system.
+ */
+readonly abstract class AbstractEvent implements EventInterface
 {
     public function __construct(
-        protected string $name,
-        protected array $data,
-        protected ?int $timestamp = null
+        private string $name,
+        private array $data,
+        private ?int $timestamp = null
     ) {
         $this->timestamp = $timestamp ?? time();
     }
